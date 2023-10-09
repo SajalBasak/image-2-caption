@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Captioning</title>
+</head>
+<body>
+	<h1>Image Captioning</h1>
+
+	<form method="POST" action="/" enctype="multipart/form-data">
+		<input type="file" name="userfile" placeholder="Your Image">
+		<input type="submit">
+	</form>
+
+	{% if your_result %}
+		<img src="{{your_result['image']}}">
+		<br>
+		<h1>Generated Caption: <i>{{ your_result['caption'] }}</i></h1>
+		<br>
+		<audio controls>
+			<source src="{{your_result['voice']}}" type="audio/mpeg">
+			Not supported!
+		</audio>
+	{% endif %}
+</body>
+</html>
